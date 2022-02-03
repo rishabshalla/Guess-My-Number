@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //To minimise the height of chatbox
+        $(document).ready(function() {
+            window.addEventListener('dfMessengerLoaded', function (event) {
+            $r1 = document.querySelector("df-messenger");
+            $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+            $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
+            var sheet = new CSSStyleSheet;
+            // manage box height from here
+            sheet.replaceSync( `div.chat-wrapper[opened="true"] { height: 450px }`);
+            $r2.shadowRoot.adoptedStyleSheets = [ sheet ];
+            });
+        });
+    </script> -->
+    <title>Guess My Number!</title>
+  <df-messenger
+  intent="WELCOME"
+  chat-title="Metis_dialogflow"
+  chat-icon="https://img.icons8.com/cotton/452/sms-1.png"
+  agent-id="1aeb83cb-62fd-4c1a-a2ae-9fc809e7d847"
+  language-code="en"
+></df-messenger>
+    <style>
+    df-messenger {
+     --df-messenger-bot-message: #878fac;
+     --df-messenger-button-titlebar-color: #02863e;
+     --df-messenger-chat-background-color: #fafafa;
+     --df-messenger-font-color: white;
+     --df-messenger-send-icon: #72df29f5;
+     --df-messenger-user-message: #479b3d;
+/*      margin: 0;
+     padding: 0;
+     position: fixed;
+     right: 0;
+     transform: translateX(50%) translateY(50%);
+     bottom: 90px; */
+    }
+  </style>
+  </head>
+  <body>
+    <header>
+      <h1>Guess My Number!</h1>
+      <p class="between">(Between 1 and 20)</p>
+      <button class="btn again">Again!</button>
+      <div class="number">?</div>
+    </header>
+    <main>
+      <section class="left">
+        <input type="number" class="guess" />
+        <button class="btn check">Check!</button>
+      </section>
+      <section class="right">
+        <p class="message">Start guessing...</p>
+        <p class="label-score">💯 Score: <span class="score">20</span></p>
+        <p class="label-highscore">
+          🥇 Highscore: <span class="highscore">0</span>
+        </p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
